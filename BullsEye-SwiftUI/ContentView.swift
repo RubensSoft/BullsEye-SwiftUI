@@ -2,8 +2,15 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
-            .fontWeight(.semibold)
+        VStack {
+            Text("Hello, World!")
+                .fontWeight(.semibold)
+            Button(action: {
+                print("Hit me again!")
+            }) {
+                Text("Hit me!!!")
+            }
+        }
     }
 }
 
