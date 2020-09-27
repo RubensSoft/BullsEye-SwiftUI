@@ -5,18 +5,41 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Text("Hello, World!")
-                .fontWeight(.semibold)
-            Button(action: {
-                self.isAlertPresented = true
-                print("Buton pressed")
-            }) {
-                Text("Hit me!!!")
+            HStack {
+                Text("Put the bullseye as close as you can to:")
+                Text("100")
+                    .fontWeight(.bold)
             }
-            .alert(isPresented: $isAlertPresented) {
-                Alert(title: Text("Hi there!"),
-                      message: Text("Hit me again"),
-                      dismissButton: .default(Text("See you soon")))
+            
+            HStack {
+                Text("1")
+                Slider(value: .constant(10))
+                Text("100")
+            }
+            
+            Button(action: {
+                      self.isAlertPresented = true
+                      print("Buton pressed")
+                  }) {
+                      Text("Hit me!!!")
+                  }
+                  .alert(isPresented: $isAlertPresented) {
+                      Alert(title: Text("Hi there!"),
+                            message: Text("Hit me again"),
+                            dismissButton: .default(Text("See you soon")))
+                  }
+            
+            HStack {
+                Button(action: {}) {
+                    Text("Start over")
+                }
+                Text("Score:")
+                Text("999999")
+                Text("Round:")
+                Text("999")
+                Button(action: {}) {
+                    Text("Info")
+                }
             }
         }
     }
