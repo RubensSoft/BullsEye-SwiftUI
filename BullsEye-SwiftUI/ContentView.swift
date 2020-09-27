@@ -30,7 +30,7 @@ struct ContentView: View {
             }
             .alert(isPresented: $isAlertPresented) {
                 Alert(title: Text("Hi there!"),
-                      message: Text("The slider's value is: \(sliderValue)"),
+                      message: Text("The slider's value is: \(Int(sliderValue.rounded()))"),
                       dismissButton: .default(Text("See you soon")))
             }
             Spacer()
