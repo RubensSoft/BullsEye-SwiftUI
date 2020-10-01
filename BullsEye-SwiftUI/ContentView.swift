@@ -1,9 +1,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var target: Int = Int.random(in: 1...100)
-    @State var sliderValue: Double = 50.0
-    @State var isAlertPresented: Bool = false
+    @State var target = Int.random(in: 1...100)
+    @State var sliderValue = 50.0
+    @State var isAlertPresented = false
     
     var sliderValueRounded: Int {
         Int(self.sliderValue.rounded())
