@@ -1,8 +1,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var isAlertPresented: Bool = false
+    @State var target: Int = Int.random(in: 1...100)
     @State var sliderValue: Double = 50.0
+    @State var isAlertPresented: Bool = false
     
     var body: some View {
         VStack {
@@ -10,7 +11,7 @@ struct ContentView: View {
             
             HStack {
                 Text("Put the bullseye as close as you can to:")
-                Text("100")
+                Text("\(target)")
                     .fontWeight(.bold)
             }
             Spacer()
