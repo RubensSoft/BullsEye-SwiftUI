@@ -5,6 +5,10 @@ struct ContentView: View {
     @State var sliderValue: Double = 50.0
     @State var isAlertPresented: Bool = false
     
+    var sliderValueRounded: Int {
+        Int(self.sliderValue.rounded())
+    }
+    
     var body: some View {
         VStack {
             Spacer()
@@ -31,7 +35,7 @@ struct ContentView: View {
             }
             .alert(isPresented: $isAlertPresented) {
                 Alert(title: Text("Hi there!"),
-                      message: Text("The slider's value is: \(Int(sliderValue.rounded())).\n" +
+                      message: Text("The slider's value is: \(sliderValueRounded).\n" +
                         "The target value is \(target).\n" +
                         "You scored \(pointsForCurrentRound()) points this round."),
                       dismissButton: .default(Text("See you soon")))
@@ -59,11 +63,10 @@ struct ContentView: View {
     
     func pointsForCurrentRound() -> Int {
         let difference: Int
-        let sliderValue = Int(self.sliderValue.rounded())
-        if sliderValue > target {
-            difference = sliderValue - target
-        } else if target > sliderValue {
-            difference = target - sliderValue
+        if sliderValueRounded > target {
+            difference = sliderValueRounded - target
+        } else if target > sliderValueRounded {
+            difference = target - sliderValueRounded
         } else {
             difference = 0
         }
