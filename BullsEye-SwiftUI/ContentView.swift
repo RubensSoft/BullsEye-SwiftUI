@@ -41,9 +41,7 @@ struct ContentView: View {
                 Alert(title: Text(alertTitle()),
                       message: Text(scoringMessage()),
                       dismissButton: .default(Text("See you soon")){
-                        self.score += self.pointsForCurrentRound()
-                        self.target = Int.random(in: 1...100)
-                        self.round += 1
+                        self.startNewRound()
                     })
             }
             Spacer()
@@ -72,6 +70,16 @@ struct ContentView: View {
     private func startNewGame() {
         score = 0
         round = 1
+        resetSliderAndTarget()
+    }
+    
+    private func startNewRound() {
+        score += pointsForCurrentRound()
+        round += 1
+        resetSliderAndTarget()
+    }
+    
+    private func resetSliderAndTarget() {
         sliderValue = 50.0
         target = Int.random(in: 1...100)
     }
