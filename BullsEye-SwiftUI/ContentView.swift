@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var score = 0
     @State var target = Int.random(in: 1...100)
     @State var sliderValue = 50.0
     @State var isAlertPresented = false
@@ -29,7 +30,7 @@ struct ContentView: View {
             
             Button(action: {
                 self.isAlertPresented = true
-                print("Buton pressed")
+                self.score += self.pointsForCurrentRound()
             }) {
                 Text("Hit me!!!")
             }
@@ -46,7 +47,7 @@ struct ContentView: View {
                 }
                 Spacer()
                 Text("Score:")
-                Text("999999")
+                Text("\(score)")
                 Spacer()
                 Text("Round:")
                 Text("999")
