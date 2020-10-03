@@ -3,8 +3,8 @@ import SwiftUI
 struct ContentView: View {
     @State var score = 0
     @State var round = 1
-    @State var target = Int.random(in: 1...100)
-    @State var sliderValue = 50.0
+    @State var target = 0
+    @State var sliderValue = 0.0
     @State var isAlertPresented = false
     
     var sliderValueRounded: Int {
@@ -65,6 +65,9 @@ struct ContentView: View {
             }
             .padding(.bottom, 20)
         }
+        .onAppear() {
+            self.startNewGame()
+        }
     }
     
     private func startNewGame() {
@@ -80,7 +83,7 @@ struct ContentView: View {
     }
     
     private func resetSliderAndTarget() {
-        sliderValue = 50.0
+        sliderValue = Double.random(in: 1...100)
         target = Int.random(in: 1...100)
     }
     
