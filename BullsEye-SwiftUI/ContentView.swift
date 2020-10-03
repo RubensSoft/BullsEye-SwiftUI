@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var score = 0
+    @State var round = 1
     @State var target = Int.random(in: 1...100)
     @State var sliderValue = 50.0
     @State var isAlertPresented = false
@@ -29,14 +31,17 @@ struct ContentView: View {
             
             Button(action: {
                 self.isAlertPresented = true
-                print("Buton pressed")
             }) {
                 Text("Hit me!!!")
             }
             .alert(isPresented: $isAlertPresented) {
                 Alert(title: Text("Hi there!"),
                       message: Text(scoringMessage()),
-                      dismissButton: .default(Text("See you soon")))
+                      dismissButton: .default(Text("See you soon")){
+                        self.score += self.pointsForCurrentRound()
+                        self.target = Int.random(in: 1...100)
+                        self.round += 1
+                    })
             }
             Spacer()
             
@@ -46,10 +51,10 @@ struct ContentView: View {
                 }
                 Spacer()
                 Text("Score:")
-                Text("999999")
+                Text("\(score)")
                 Spacer()
                 Text("Round:")
-                Text("999")
+                Text("\(round)")
                 Spacer()
                 Button(action: {}) {
                     Text("Info")
@@ -60,15 +65,9 @@ struct ContentView: View {
     }
     
     private func pointsForCurrentRound() -> Int {
-        let difference: Int
-        if sliderValueRounded > target {
-            difference = sliderValueRounded - target
-        } else if target > sliderValueRounded {
-            difference = target - sliderValueRounded
-        } else {
-            difference = 0
-        }
-        return 100 - difference
+        let maximumScore = 100
+        let difference = abs(sliderValueRounded - target)
+        return maximumScore - difference
     }
     
     private func scoringMessage() -> String {
