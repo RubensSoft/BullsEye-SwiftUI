@@ -10,6 +10,9 @@ struct ContentView: View {
     var sliderValueRounded: Int {
         Int(self.sliderValue.rounded())
     }
+    var sliderTargerDifference: Int {
+        abs(sliderValueRounded - target)
+    }
     
     var body: some View {
         VStack {
@@ -66,17 +69,14 @@ struct ContentView: View {
     
     private func pointsForCurrentRound() -> Int {
         let maximumScore = 100
-        let difference = abs(sliderValueRounded - target)
         var points = 0
-        
-        if difference == 0 {
+        if sliderTargerDifference == 0 {
             points = 200
-        } else if difference == 1 {
+        } else if sliderTargerDifference == 1 {
             points = 150
         } else {
-            points = maximumScore - difference
+            points = maximumScore - sliderTargerDifference
         }
-        
         return points
     }
     
@@ -87,13 +87,12 @@ struct ContentView: View {
     }
     
     private func alertTitle() -> String {
-        let difference = abs(sliderValueRounded - target)
         let title: String
-        if difference == 0 {
+        if sliderTargerDifference == 0 {
             title = "Perfect!"
-        } else if difference < 5 {
+        } else if sliderTargerDifference < 5 {
             title = "You almost had it!"
-        } else if difference <= 10 {
+        } else if sliderTargerDifference <= 10 {
             title = "Not bad."
         } else {
             title = "Are you even trying?"
