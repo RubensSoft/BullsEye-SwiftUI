@@ -30,15 +30,16 @@ struct ContentView: View {
             
             Button(action: {
                 self.isAlertPresented = true
-                self.score += self.pointsForCurrentRound()
-                self.target = Int.random(in: 1...100)
             }) {
                 Text("Hit me!!!")
             }
             .alert(isPresented: $isAlertPresented) {
                 Alert(title: Text("Hi there!"),
                       message: Text(scoringMessage()),
-                      dismissButton: .default(Text("See you soon")))
+                      dismissButton: .default(Text("See you soon")){
+                        self.score += self.pointsForCurrentRound()
+                        self.target = Int.random(in: 1...100)
+                    })
             }
             Spacer()
             
