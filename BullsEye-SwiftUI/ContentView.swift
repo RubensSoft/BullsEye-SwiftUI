@@ -30,6 +30,7 @@ struct ContentView: View {
                 Slider(value: $sliderValue, in: 1...100)
                 Text("100")
             }
+            .padding(.horizontal, 40)
             Spacer()
             
             Button(action: {
@@ -63,7 +64,8 @@ struct ContentView: View {
                     Text("Info")
                 }
             }
-            .padding(.bottom, 20)
+            .padding(.horizontal, 40)
+            .padding(.bottom, 40)
         }
         .onAppear() {
             self.startNewGame()
