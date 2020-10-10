@@ -1,17 +1,22 @@
 import SwiftUI
 
 struct AboutView: View {
+    let beige = Color(red: 1.0, green: 0.84, blue: 0.70)
+    
     var body: some View {
-        VStack {
-            Text("🎯 BullsEye 🎯")
-                .modifier(AboutHeadingStyle())
-            Text("This is Bullseye, the game where you can win points and earn fame by draggin a slider.")
-                .modifier(AboutBodyStyle())
-            Text("Your goal is to place the slider as close as you possible to the target value. Te closer you are, the more points you score.")
-                .modifier(AboutBodyStyle())
-            Text("Enjoy!")
-                .modifier(AboutBodyStyle())
-        }
+        Group {
+            VStack {
+                Text("🎯 BullsEye 🎯")
+                    .modifier(AboutHeadingStyle())
+                Text("This is Bullseye, the game where you can win points and earn fame by draggin a slider.")
+                    .modifier(AboutBodyStyle())
+                Text("Your goal is to place the slider as close as you possible to the target value. Te closer you are, the more points you score.")
+                    .modifier(AboutBodyStyle())
+                Text("Enjoy!")
+                    .modifier(AboutBodyStyle())
+            }
+            .background(beige)
+        }.background(Image("Background"))
     }
 }
 
