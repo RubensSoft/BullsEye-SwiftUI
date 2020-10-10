@@ -48,7 +48,13 @@ struct ContentView: View {
                 self.isAlertPresented = true
             }) {
                 Text("Hit me!!!")
+                    .font(.custom("Arial Rounded MT Bold", size: 18))
+                    .foregroundColor(.black)
             }
+            .background(
+                Image("Button")
+                    .shadow(color: .black, radius: 5, x: 2, y: 2)
+            )
             .alert(isPresented: $isAlertPresented) {
                 Alert(title: Text(alertTitle()),
                       message: Text(scoringMessage()),
@@ -63,7 +69,13 @@ struct ContentView: View {
                     self.startNewGame()
                 }) {
                     Text("Start over")
+                        .font(.custom("Arial Rounded MT Bold", size: 18))
+                        .foregroundColor(.black)
                 }
+                .background(
+                    Image("Button")
+                        .shadow(color: .black, radius: 5, x: 2, y: 2)
+                )
                 Spacer()
                 Text("Score:")
                     .font(.custom("Arial Rounded MT Bold", size: 18))
@@ -85,7 +97,12 @@ struct ContentView: View {
                 Spacer()
                 Button(action: {}) {
                     Text("Info")
+                        .font(.custom("Arial Rounded MT Bold", size: 18))
+                        .foregroundColor(.black)
                 }
+                .background(Image("Button")
+                .shadow(color: .black, radius: 5, x: 2, y: 2)
+                )
             }
             .padding(.horizontal, 40)
             .padding(.bottom, 40)
