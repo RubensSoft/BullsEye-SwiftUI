@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    let midnightBlueColor = Color(red: 0, green: 0.2, blue: 0.4)
+    
     @State var score = 0
     @State var round = 1
     @State var target = 0
@@ -30,6 +32,7 @@ struct ContentView: View {
                 Text("1")
                     .modifier(LabelStyle())
                 Slider(value: $sliderValue, in: 1...100)
+                    .accentColor(.green)
                 Text("100")
                     .modifier(LabelStyle())
             }
@@ -85,6 +88,7 @@ struct ContentView: View {
             }
             .padding(.horizontal, 40)
             .padding(.bottom, 40)
+            .accentColor(midnightBlueColor)
         }
         .onAppear() {
             self.startNewGame()
