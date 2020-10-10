@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E6889932532645200227EA4 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6889922532645200227EA4 /* AboutView.swift */; };
 		0EC5D8F92515ED2000A021A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC5D8F82515ED2000A021A2 /* AppDelegate.swift */; };
 		0EC5D8FB2515ED2000A021A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC5D8FA2515ED2000A021A2 /* SceneDelegate.swift */; };
 		0EC5D8FD2515ED2000A021A2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC5D8FC2515ED2000A021A2 /* ContentView.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E6889922532645200227EA4 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		0EC5D8F52515ED2000A021A2 /* BullsEye-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BullsEye-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EC5D8F82515ED2000A021A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EC5D8FA2515ED2000A021A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				0EC5D8F82515ED2000A021A2 /* AppDelegate.swift */,
 				0EC5D8FA2515ED2000A021A2 /* SceneDelegate.swift */,
 				0EC5D8FC2515ED2000A021A2 /* ContentView.swift */,
+				0E6889922532645200227EA4 /* AboutView.swift */,
 				0EC5D8FE2515ED2100A021A2 /* Assets.xcassets */,
 				0EC5D9032515ED2100A021A2 /* LaunchScreen.storyboard */,
 				0EC5D9062515ED2100A021A2 /* Info.plist */,
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E6889932532645200227EA4 /* AboutView.swift in Sources */,
 				0EC5D8F92515ED2000A021A2 /* AppDelegate.swift in Sources */,
 				0EC5D8FB2515ED2000A021A2 /* SceneDelegate.swift in Sources */,
 				0EC5D8FD2515ED2000A021A2 /* ContentView.swift in Sources */,
