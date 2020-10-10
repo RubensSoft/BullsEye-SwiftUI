@@ -56,8 +56,11 @@ struct ContentView: View {
                 Button(action: {
                     self.startNewGame()
                 }) {
-                    Text("Start over")
-                        .modifier(ButtonSmallTextStyle())
+                    HStack {
+                        Image("StartOverIcon")
+                        Text("Start over")
+                            .modifier(ButtonSmallTextStyle())
+                    }
                 }
                 .background(Image("Button").modifier(ShadowStyle()))
                 Spacer()
@@ -72,8 +75,11 @@ struct ContentView: View {
                     .modifier(ValueStyle())
                 Spacer()
                 Button(action: {}) {
-                    Text("Info")
-                        .modifier(ButtonSmallTextStyle())
+                    HStack {
+                        Image("InfoIcon")
+                        Text("Info")
+                            .modifier(ButtonSmallTextStyle())
+                    }
                 }
                 .background(Image("Button").modifier(ShadowStyle()))
             }
