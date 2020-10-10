@@ -20,26 +20,18 @@ struct ContentView: View {
             
             HStack {
                 Text("Put the bullseye as close as you can to:")
-                    .font(.custom("Arial Rounded MT Bold", size: 18))
-                    .foregroundColor(.white)
-                    .shadow(color: .black, radius: 5, x: 2, y: 2)
+                    .modifier(LabelStyle())
                 Text("\(target)")
-                    .font(.custom("Arial Rounded MT Bold", size: 24))
-                    .foregroundColor(.yellow)
-                    .shadow(color: .black, radius: 5, x: 2, y: 2)
+                    .modifier(ValueStyle())
             }
             Spacer()
             
             HStack {
                 Text("1")
-                    .font(.custom("Arial Rounded MT Bold", size: 18))
-                    .foregroundColor(.white)
-                    .shadow(color: .black, radius: 5, x: 2, y: 2)
+                    .modifier(LabelStyle())
                 Slider(value: $sliderValue, in: 1...100)
                 Text("100")
-                    .font(.custom("Arial Rounded MT Bold", size: 18))
-                    .foregroundColor(.white)
-                    .shadow(color: .black, radius: 5, x: 2, y: 2)
+                    .modifier(LabelStyle())
             }
             .padding(.horizontal, 40)
             Spacer()
@@ -78,22 +70,14 @@ struct ContentView: View {
                 )
                 Spacer()
                 Text("Score:")
-                    .font(.custom("Arial Rounded MT Bold", size: 18))
-                    .foregroundColor(.white)
-                    .shadow(color: .black, radius: 5, x: 2, y: 2)
+                    .modifier(LabelStyle())
                 Text("\(score)")
-                    .font(.custom("Arial Rounded MT Bold", size: 24))
-                    .foregroundColor(.yellow)
-                    .shadow(color: .black, radius: 5, x: 2, y: 2)
+                    .modifier(ValueStyle())
                 Spacer()
                 Text("Round:")
-                    .font(.custom("Arial Rounded MT Bold", size: 18))
-                    .foregroundColor(.white)
-                    .shadow(color: .black, radius: 5, x: 2, y: 2)
+                    .modifier(LabelStyle())
                 Text("\(round)")
-                    .font(.custom("Arial Rounded MT Bold", size: 24))
-                    .foregroundColor(.yellow)
-                    .shadow(color: .black, radius: 5, x: 2, y: 2)
+                    .modifier(ValueStyle())
                 Spacer()
                 Button(action: {}) {
                     Text("Info")
@@ -161,6 +145,24 @@ struct ContentView: View {
             title = "Are you even trying?"
         }
         return title
+    }
+}
+
+struct LabelStyle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.custom("Arial Rounded MT Bold", size: 18))
+            .foregroundColor(.white)
+            .shadow(color: .black, radius: 5, x: 2, y: 2)
+    }
+}
+
+struct ValueStyle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.custom("Arial Rounded MT Bold", size: 24))
+            .foregroundColor(.yellow)
+            .shadow(color: .black, radius: 5, x: 2, y: 2)
     }
 }
 
