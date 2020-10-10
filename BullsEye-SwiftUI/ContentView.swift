@@ -20,15 +20,26 @@ struct ContentView: View {
             
             HStack {
                 Text("Put the bullseye as close as you can to:")
+                    .font(.custom("Arial Rounded MT Bold", size: 18))
+                    .foregroundColor(.white)
+                    .shadow(color: .black, radius: 5, x: 2, y: 2)
                 Text("\(target)")
-                    .fontWeight(.bold)
+                    .font(.custom("Arial Rounded MT Bold", size: 24))
+                    .foregroundColor(.yellow)
+                    .shadow(color: .black, radius: 5, x: 2, y: 2)
             }
             Spacer()
             
             HStack {
                 Text("1")
+                    .font(.custom("Arial Rounded MT Bold", size: 18))
+                    .foregroundColor(.white)
+                    .shadow(color: .black, radius: 5, x: 2, y: 2)
                 Slider(value: $sliderValue, in: 1...100)
                 Text("100")
+                    .font(.custom("Arial Rounded MT Bold", size: 18))
+                    .foregroundColor(.white)
+                    .shadow(color: .black, radius: 5, x: 2, y: 2)
             }
             .padding(.horizontal, 40)
             Spacer()
@@ -55,10 +66,22 @@ struct ContentView: View {
                 }
                 Spacer()
                 Text("Score:")
+                    .font(.custom("Arial Rounded MT Bold", size: 18))
+                    .foregroundColor(.white)
+                    .shadow(color: .black, radius: 5, x: 2, y: 2)
                 Text("\(score)")
+                    .font(.custom("Arial Rounded MT Bold", size: 24))
+                    .foregroundColor(.yellow)
+                    .shadow(color: .black, radius: 5, x: 2, y: 2)
                 Spacer()
                 Text("Round:")
+                    .font(.custom("Arial Rounded MT Bold", size: 18))
+                    .foregroundColor(.white)
+                    .shadow(color: .black, radius: 5, x: 2, y: 2)
                 Text("\(round)")
+                    .font(.custom("Arial Rounded MT Bold", size: 24))
+                    .foregroundColor(.yellow)
+                    .shadow(color: .black, radius: 5, x: 2, y: 2)
                 Spacer()
                 Button(action: {}) {
                     Text("Info")
